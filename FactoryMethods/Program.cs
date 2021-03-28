@@ -40,12 +40,20 @@ namespace FactoryMethods
                     throw new NotSupportedException();
             }
         }
+
+        public abstract class bikeAbstractFactory
+        {
+            protected abstract Animals Makebike();
+
+            public Animals GetObject()
+            {
+            return this.Makebike();
+            }
+        }
         static void Main(string[] args) 
         {
             Animals Animal = new Carnivores();
             Animals Animal2 = new Herbivores();
-            Animal.GetName();
-            Animal2.GetName();
             
 
         }
